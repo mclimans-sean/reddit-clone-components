@@ -1,0 +1,92 @@
+
+
+
+  <!--
+    ====================================
+    CAT FAIL DISPLAY AREA
+    ====================================
+  -->
+
+  <div class="row" ng-repeat="cat in $ctrl.catService | filter:search | orderBy:$ctrl.service.sortBy">
+    <div class="col-md-12">
+
+      <!-- CAT FAIL GIF AREA -->
+
+      <div class="well">
+        <div class="media-left">
+          <img class="media-object" src={{cat.image_url}}>
+        </div>
+
+        <!-- TITLE OF POST -->
+
+        <div class="media-body">
+          <h4 class="media-heading">
+            {{cat.title}}
+            |
+            <a><i ng-click="cat.votes = cat.votes + 1"
+              ng-init="cat.rating"
+              class="glyphicon glyphicon-arrow-up"></i></a>
+            <a><i ng-click="cat.votes = cat.votes -1"
+              ng-init="cat.votes"
+              class="glyphicon glyphicon-arrow-down"></i></a>
+            {{cat.votes}}
+          </h4>
+
+          <!-- NAME OF CONTRIBUTOR FIELD -->
+          <div class="text-right">
+            {{cat.contributor}}
+          </div>
+
+          <!-- DESCRIPTION OF THE POST -->
+          <p>
+            {{cat.description}}
+          </p>
+
+          <!-- TIMESTAMP FROM WHEN THE POST WAS SUBMITTED -->
+          <div>
+            <time ng-controller="updateCats as update"
+            am-time-ago="cat.submitted">
+            {{ cat.submitted | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</time>
+            |
+            <i class="glyphicon glyphicon-comment"></i>
+
+            <!-- COMMENTS RELATED TO THE POST -->
+
+            <a ng-click="toggleComments = !toggleComments">
+              {{(cat.user_comments).length}} comments
+            </a>
+            <ul ng-repeat="comment in cat.user_comments"
+              ng-show="toggleComments">
+              <li>{{comment.comment}}</li>
+            </ul>
+          </div>
+
+            <!-- SUBMIT NEW COMMENTS FORM -->
+          <div class="row">
+            <div class="col-md-offset-1">
+              <hr>
+              <p>
+                Comment text
+              </p>
+              <form ng-submit="$ctrl.postComment(post, cat)"
+                class="form-inline">
+                <div class="form-group">
+                  <input ng-model="post.newComment"
+                  class="form-control"
+                  type="text">
+                </div>
+                <div class="form-group">
+                  <button ng-click="toggleCommentInput = !toggleCommentInput"
+
+                    type="submit"
+                    class="btn btn-success">Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

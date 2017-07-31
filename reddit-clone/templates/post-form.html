@@ -1,0 +1,69 @@
+<!--
+  ============================
+  NEW CAT FAIL POST FORM
+  ============================
+-->
+
+<div class="row form-group has-success" ng-hide="toggleForm">
+  <div class="col-md-8">
+
+    <!-- TITLE -->
+
+    <form name="new-cat"
+      ng-disable="new-cat.$invalid"
+      ng-submit="$ctrl.postCats()">
+
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title"
+        class="form-control"
+        ng-model="$ctrl.newcat.cats.title"
+        ng-minlength="8"
+        ng-maxlength="30"
+        required>
+      </div>
+
+      <!-- DESCRIPTION -->
+
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description"
+        class="form-control"
+        ng-model="$ctrl.newcat.cats.description"
+        required></textarea>
+      </div>
+
+      <!-- CONTRIBUTOR -->
+
+      <div>
+        <label for="contributor">Contributor</label>
+        <input id="contributor"
+        class="form-control"
+        ng-model="$ctrl.newcat.cats.contributor"
+        required>
+      </div>
+
+      <!-- IMAGE URL -->
+
+      <div>
+        <label for="image-url">Image URL</label>
+        <input id="image-url"
+        type="url"
+        class="form-control"
+        ng-model="$ctrl.newcat.cats.image_url"
+        required>
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+
+      <div class="form-group">
+        <button type="submit"
+        class="btn btn-primary"
+        ng-model=$ctrl.newcat.cats.submitted>
+          Create Post
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

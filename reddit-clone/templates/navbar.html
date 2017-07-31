@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default">
+  <div class="container-header">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+      data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Amazing Cat Fails Reddit Clone</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    </div>
+  </div>
+</nav>
+
+
+
+  <!--
+    ===========================
+    NEW POST BUTTON
+    ===========================
+  -->
+
+  <div class="pull-right">
+    <p><a class="btn btn-info"
+      ng-click="toggleForm = !toggleForm">New Post</a></p>
+  </div>
+
+  <!--
+    ===========================
+    FILTER DISPLAY
+    ===========================
+  -->
+
+    <!-- SEARCH FILTER -->
+
+  <ul class="nav nav-pills form-group has-success">
+    <li role="presentation" class="active">
+      <input type="search"
+      ng-model="$ctrl.service.search"
+      class="form-control input-sm search-form"
+      placeholder="Filter">
+    </li>
+
+    <!-- DROPDOWN/SELECT FILTER -->
+
+    <div class="form-inline">
+      <label for="sort">  Sort by </label>
+      <select
+        ng-model="$ctrl.service.sortBy"
+        ng-options="key as value for (key , value) in $ctrl.options"
+        class="form-control"
+        id="sort">
+      </select>
+    </div>
+  </ul>
