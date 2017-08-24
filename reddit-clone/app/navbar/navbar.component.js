@@ -5,7 +5,7 @@
     .module('catApp')
     .component('navbar', {
       controller: 'navBarController',
-      templateUrl: 'templates/navbar.html'
+      templateUrl: 'app/navbar/navbar.html'
     })
 
 }());

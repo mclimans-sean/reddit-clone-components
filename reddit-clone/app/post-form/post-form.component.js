@@ -5,7 +5,7 @@
     .module('catApp')
     .component('postForm', {
       controller: 'postCats',
-      templateUrl: 'templates/post-form.html'
+      templateUrl: 'app/post-form/post-form.html'
     })
 
 }());
