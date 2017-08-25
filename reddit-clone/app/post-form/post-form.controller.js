@@ -9,14 +9,9 @@
       const vm = this;
 
       vm.newcat = catFailsService
+      console.log('Lets see some cats, bro!!!');
 
-
-        console.log('Lets see some cats, bro!!!');
-        catFailsService.push(vm.newcat)
-        vm.newcat.submitted = Date.now()
-        vm.newcat.user_comments = []
-        delete vm.newcat
-
+      vm.onSave({savedCat: vm.newCat})
     }
 
 }());

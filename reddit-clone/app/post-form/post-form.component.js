@@ -5,7 +5,11 @@
     .module('catApp')
     .component('postForm', {
       controller: 'postCats',
-      templateUrl: 'app/post-form/post-form.html'
+      templateUrl: 'app/post-form/post-form.html',
+      bindings: {
+        newCat:'<',
+        onSave: '&'
+      }
     })
 
 }());

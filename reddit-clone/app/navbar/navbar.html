@@ -57,3 +57,15 @@
       </select>
     </div>
   </ul>
+
+  <!--
+    =======================================================
+    NEW CAT FAIL POST FORM      NOTE: POST-FORM COMPONENT
+    =======================================================
+  -->
+
+  <div class="" ng-show="toggleForm">
+
+    <post-form new-cat=$ctrl.someCat on-save="$ctrl.doStuff(savedCat)"></post-form>
+
+  </div>
